@@ -1,0 +1,61 @@
+.resizeButton{
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 300px;
+    left: -322px;
+    bottom:0;
+    background-color: #000000;
+    opacity: 0.5;
+    text-align: center;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.resizeButton span{
+    color: #FFFFFF;
+}
+.resizeButton:hover{
+    cursor: pointer;
+    opacity: 1;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.row-fluid #dropped-files img{
+    max-width: none;
+    max-height: none;
+}
+#modalCropImage img, .img_upload > img {
+    max-width: none;
+    max-height: none;
+}
+.img_upload {
+    /* border: 3px dashed #D1D7DF;*/
+    min-height: 6px;
+    overflow: hidden;
+    position: relative;
+    margin  : 10px 0;
+    float   : left;
+}
+/*.resizeImg {
+    margin: 10px 0;
+}*/
+.withDelButton {
+    position: relative;
+}
+.delete-photo,.delete-photo-item{
+    display: inline-block;
+    vertical-align: top;
+    /* right: 23px;
+    position: relative;
+    top: 7px;*/
+    left: 276px;
+    position: absolute;
+    top: 12px;
+}
+.delete-photo:hover,.delete-photo-item:hover{
+    cursor: pointer;
+}

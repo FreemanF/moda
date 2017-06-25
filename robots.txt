@@ -1,0 +1,3 @@
+Sitemap: http://empty.kpd/sitemap
+User-agent: *
+Disallow: /

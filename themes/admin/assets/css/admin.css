@@ -1,0 +1,181 @@
+.filterSelectBox{
+    margin:15px 0 !important;
+    padding:0 0;
+}
+.filterSelectBox.inRow {
+    margin: 0 !important;
+}
+a.delete:hover,a.update:hover{
+    cursor: pointer;
+}
+.button-column{
+    min-width: 15%;
+}
+.button-add{
+    border: none !important;
+    margin-bottom: 10px !important;
+}
+.btn-inline {
+    padding-top: 7px; 
+    margin-top: 15px; 
+    margin-left: 15px; 
+    padding-bottom: 7px;
+}
+.main-content .form-horizontal .container-fluid button.btn{
+    background-color: #363636;
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+.controls .btn { margin: 15px 0; }
+.item_sort, .member_sort { cursor: move; }
+.xbreadcrumbs li {
+     min-width: 50px !important;
+}
+
+.validate {
+    display:none;
+}
+.error-validate .validate, .error-validate.validate {
+    display:block;
+}
+
+.folder_sort div.checker, .folder_previous div.checker  {
+    display:none;
+}
+.folder_sort td.isnamefield,.folder_previous td.isnamefield {
+    cursor: pointer;
+    font-weight:bold;
+}
+td.isnamefield > a{
+    color: #666666;
+}
+.folder_previous td:last-child a {
+    display:none;
+}
+
+#finder *:before{
+    content: none !important;
+}
+.ui-dialog *:before{
+    content: none !important;
+}
+.ui-dialog-buttonset .ui-button:nth-child(1) {
+    background-image: linear-gradient(#FFFFFF, #FFFFFF 25%, #E6E6E6);
+    border-color: #CCCCCC #CCCCCC #BBBBBB;
+    color: #333333;
+    font-size: 14px;
+    line-height: normal;
+    padding: 5px 14px 6px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+
+/*
+.ui-pnotify.nofly {
+    right : auto !important; 
+    top   : auto !important; 
+}
+.light-version .ui-pnotify .icon-info-sign {
+    background: none repeat scroll 0 0 #000000;
+}
+.light-version .ui-pnotify .icon-info-sign:before {
+    color: rgba(200, 192, 182, 0.9);
+}
+*/
+
+.bootstrap-tooltip.thin-tooltip {
+    margin-top: 20px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 24px;
+}
+.bootstrap-tooltip.thin-tooltip:before {
+    content: "";
+}
+
+.icon-photon.info-circle {
+    top: auto;
+}
+
+.tooltip-inner{
+    max-width: 200px;
+}
+.dashboard-quick-launch ul li p {
+    height: auto;
+}
+.short-cut-title{
+    color: #FFFFFF;
+    text-align: left;
+}
+.light-version .short-cut-title{
+    color: #666666;
+}
+
+
+
+@media(max-width:979px){
+    .jstree-default .jstree-closed > ins {
+        background-position: 2px 1px;
+    }
+    .jstree-default .jstree-open > ins {
+        background-position: -32px -49px;
+    }
+}
+
+@media screen and (max-width:767px){
+    .panel-header h1 {
+        float: left;
+        font-size: 20px;
+        line-height: 60px;
+        position: absolute;
+        left: 160px;
+        top: 0px;
+    }
+}
+
+div.hint-controls.error-validate input.hint-validate {
+    background-color: rgb(244, 200, 197);
+}
+.nav-absolute-left {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1030;
+}
+.nav-side-menu {
+    height: auto;
+    -webkit-border-radius: 0px 0px 10px 0px;
+    border-radius: 0px 0px 10px 0px;    
+}
+.table-striped tbody > tr.nopublished > td, .table-striped tbody > tr.nopublished > th {
+    background-color: #E9E9E9;
+}
+.table-striped tbody > tr.nopublished:nth-child(2n+1) > td, .table-striped tbody > tr.nopublished:nth-child(2n+1) > th {
+    background-color: #E6E6E6;
+}
+.button-column>.update{
+    margin-right: 10px;
+}
+
+/* special for latifundist menu always showed panel always retracted*/
+.nav-side-menu > li a .nav-selection { color: #FFFFFF; }
+.nav-side-menu .nav-selection { max-width: 163px; padding-right: 10px; }
+.nav-side-menu:hover .nav-selection { max-width: 163px; padding-right: 10px; }
+          .main-content { left: 564px; }
+.retracted.main-content { left: 224px; }
+          .panel { left:  164px; }
+.retracted.panel { left: -176px; }
+.retracted.panel .panel-content { visibility: hidden; }
+
+.dashboard-quick-launch, .dashboard-widget-group {
+    padding: 0 10px 0 221px;
+}
+
+.image-exists:before, .fileupload:before, .el-finder-contextmenu .upload:before {
+    content: "";
+}

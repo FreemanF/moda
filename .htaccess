@@ -1,0 +1,13 @@
+Options -Indexes
+
+#IndexIgnore */*
+
+RewriteEngine on
+
+#RedirectMatch 403 ^/\..*$
+#RedirectMatch 403 /migrate/.*$
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule .* index.php

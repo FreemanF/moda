@@ -1,0 +1,2 @@
+webpackJsonp([10],{1210:function(t,e,a){a(404),a(104),t.exports=a(168)},404:function(t,e,a){"use strict";(function(t){a(57);var e=a(115),n=function(t){return t&&t.__esModule?t:{default:t}}(e);a(149),function(){t("time").each(function(e,a){var r=(0,n.default)(t(a).attr("datetime")),u="true"==t(a).attr("relative"),o=(0,n.default)(),c=r.isBefore(o)?r:o,f=c.locale("ru").fromNow(u).replace("несколько секунд назад","только что");t(a).html("<span>"+f+"</span>")})}()}).call(e,a(39))}},[1210]);
+//# sourceMappingURL=profile.7806a91554c02c523490.js.map

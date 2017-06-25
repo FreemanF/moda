@@ -1,0 +1,285 @@
+@font-face {
+	font-family: 'kpdcms2';
+	src:url('fonts/kpdcms2.eot');
+	src:url('fonts/kpdcms2.eot?#iefix') format('embedded-opentype'),
+	url('fonts/kpdcms2.woff') format('woff'),
+	url('fonts/kpdcms2.ttf') format('truetype'),
+	url('fonts/kpdcms2.svg#kpdcms2') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'kpdcms2';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-images, .icon-videocamera, .icon-podium, .icon-piggybank, .icon-darthvader, .icon-layers, .icon-home, .icon-trophy, .icon-phonebook, .icon-phonebook2, .icon-infographic, .icon-address, .icon-starempty, .icon-starfull, .icon-starhalf, .icon-foldertree, .icon-microphone, .icon-list, .icon-settings4, .icon-settings5, .icon-businesscard2, .icon-filemanager, .icon-file, .icon-shoppingcart, .icon-appointment, .icon-bank, .icon-briefcase2, .icon-calendar, .icon-news, .icon-stocks, .icon-visa, .icon-wallet, .icon-avatar, .icon-avatar2, .icon-at, .icon-comment2, .icon-mailinglists, .icon-email, .icon-emailtrace, .icon-emailexport, .icon-emailimport, .icon-facebook2, .icon-twitter, .icon-quote, .icon-phone, .icon-rss, .icon-apple, .icon-favoritefile, .icon-favorite, .icon-favorite2, .icon-favoritefolder, .icon-lock2, .icon-iphone, .icon-network, .icon-notes, .icon-monitor, .icon-trash, .icon-brush, .icon-wizard2, .icon-bug, .icon-cmsmadesimple, .icon-rawaccesslogs, .icon-visitor, .icon-jason, .icon-superman, .icon-chef, .icon-beer, .icon-barchart, .icon-socialnetworking, .icon-alarm, .icon-support3, .icon-rocket, .icon-camera, .icon-play2, .icon-music, .icon-volumemute2, .icon-volumefull, .icon-tv, .icon-taxi, .icon-checkin, .icon-island, .icon-security2 {
+	font-family: 'kpdcms2';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-images:before {
+	content: "\f09f";
+}
+.icon-videocamera:before {
+	content: "\f19c";
+}
+.icon-podium:before {
+	content: "\f2d6";
+}
+.icon-piggybank:before {
+	content: "\f257";
+}
+.icon-darthvader:before {
+	content: "\f34a";
+}
+.icon-layers:before {
+	content: "\f1ca";
+}
+.icon-home:before {
+	content: "\21b8";
+}
+.icon-trophy:before {
+	content: "\f2d7";
+}
+.icon-phonebook:before {
+	content: "\f135";
+}
+.icon-phonebook2:before {
+	content: "\f14f";
+}
+.icon-infographic:before {
+	content: "\f336";
+}
+.icon-address:before {
+	content: "\f08f";
+}
+.icon-starempty:before {
+	content: "\f2de";
+}
+.icon-starfull:before {
+	content: "\f2e0";
+}
+.icon-starhalf:before {
+	content: "\f2df";
+}
+.icon-foldertree:before {
+	content: "\f0f0";
+}
+.icon-microphone:before {
+	content: "\f191";
+}
+.icon-list:before {
+	content: "\f113";
+}
+.icon-settings4:before {
+	content: "\f308";
+}
+.icon-settings5:before {
+	content: "\f309";
+}
+.icon-businesscard2:before {
+	content: "\f137";
+}
+.icon-filemanager:before {
+	content: "\f094";
+}
+.icon-file:before {
+	content: "\f0d6";
+}
+.icon-shoppingcart:before {
+	content: "\f035";
+}
+.icon-appointment:before {
+	content: "\f26c";
+}
+.icon-bank:before {
+	content: "\f262";
+}
+.icon-briefcase2:before {
+	content: "\f25e";
+}
+.icon-calendar:before {
+	content: "\f20f";
+}
+.icon-news:before {
+	content: "\f256";
+}
+.icon-stocks:before {
+	content: "\f250";
+}
+.icon-visa:before {
+	content: "\f3c2";
+}
+.icon-wallet:before {
+	content: "\e000";
+}
+.icon-avatar:before {
+	content: "\f15a";
+}
+.icon-avatar2:before {
+	content: "\f161";
+}
+.icon-at:before {
+	content: "\40";
+}
+.icon-comment2:before {
+	content: "\f12d";
+}
+.icon-mailinglists:before {
+	content: "\f090";
+}
+.icon-email:before {
+	content: "\f028";
+}
+.icon-emailtrace:before {
+	content: "\f091";
+}
+.icon-emailexport:before {
+	content: "\f176";
+}
+.icon-emailimport:before {
+	content: "\f177";
+}
+.icon-facebook2:before {
+	content: "\f14b";
+}
+.icon-twitter:before {
+	content: "\f16a";
+}
+.icon-quote:before {
+	content: "\f12f";
+}
+.icon-phone:before {
+	content: "\f15b";
+}
+.icon-rss:before {
+	content: "\f17b";
+}
+.icon-apple:before {
+	content: "\f34e";
+}
+.icon-favoritefile:before {
+	content: "\f381";
+}
+.icon-favorite:before {
+	content: "\f13a";
+}
+.icon-favorite2:before {
+	content: "\f13b";
+}
+.icon-favoritefolder:before {
+	content: "\f382";
+}
+.icon-lock2:before {
+	content: "\f0eb";
+}
+.icon-iphone:before {
+	content: "\f0e6";
+}
+.icon-network:before {
+	content: "\f0a6";
+}
+.icon-notes:before {
+	content: "\f0d7";
+}
+.icon-monitor:before {
+	content: "\f0d5";
+}
+.icon-trash:before {
+	content: "\f0ce";
+}
+.icon-brush:before {
+	content: "\f1b8";
+}
+.icon-wizard2:before {
+	content: "\f1fb";
+}
+.icon-bug:before {
+	content: "\f0a7";
+}
+.icon-cmsmadesimple:before {
+	content: "\f0b0";
+}
+.icon-rawaccesslogs:before {
+	content: "\f0c1";
+}
+.icon-visitor:before {
+	content: "\f097";
+}
+.icon-jason:before {
+	content: "\f38c";
+}
+.icon-superman:before {
+	content: "\f33f";
+}
+.icon-chef:before {
+	content: "\f3ce";
+}
+.icon-beer:before {
+	content: "\f244";
+}
+.icon-barchart:before {
+	content: "\f02f";
+}
+.icon-socialnetworking:before {
+	content: "\f03b";
+}
+.icon-alarm:before {
+	content: "\f233";
+}
+.icon-support3:before {
+	content: "\f015";
+}
+.icon-rocket:before {
+	content: "\f29c";
+}
+.icon-camera:before {
+	content: "\f19b";
+}
+.icon-play2:before {
+	content: "\f17e";
+}
+.icon-music:before {
+	content: "\f181";
+}
+.icon-volumemute2:before {
+	content: "\f0e5";
+}
+.icon-volumefull:before {
+	content: "\f0e2";
+}
+.icon-tv:before {
+	content: "\f1a4";
+}
+.icon-taxi:before {
+	content: "\f3a4";
+}
+.icon-checkin:before {
+	content: "\f223";
+}
+.icon-island:before {
+	content: "\f392";
+}
+.icon-security2:before {
+	content: "\f02e";
+}

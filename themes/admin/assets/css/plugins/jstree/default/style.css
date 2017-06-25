@@ -1,0 +1,14 @@
+/*
+THIS IS JUST A DUMMY CSS, USE JSTREE.LESS FILE (ALSO IN THE THEME FOLDER)
+*/
+.jstree-default a#trash ins.jstree-icon {
+    background-position: 0px -19px;
+}
+
+.jstree.jstree-default #trash.jstree-clicked > ins {
+    background-position: -18px -19px;
+}
+
+.jstree-default .jstree-open > a#trash > ins {
+    background-position: 0px -37px;
+}

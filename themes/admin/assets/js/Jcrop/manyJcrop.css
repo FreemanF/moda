@@ -1,0 +1,33 @@
+.resizeButton{
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 300px;
+    left: -330px;
+    background-color: #000000;
+    opacity: 0.5;
+    text-align: center;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.resizeButton span{
+    color: #FFFFFF;
+}
+.resizeButton:hover{
+    cursor: pointer;
+    opacity: 1;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.row-fluid #dropped-files img{
+    max-width: none;
+    max-height: none;
+}
+#modalEditPhoto img{
+    max-width: none;
+    max-height: none;
+}

@@ -1,0 +1,11 @@
+/nbproject
+/server.log
+/media/
+/media.tar
+/config-*
+/protected/config/goodini*
+/protected/config/kpd*
+/protected/config/home*
+/protected/config/local*
+/protected/config/site*
+\.env
