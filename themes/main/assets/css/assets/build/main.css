@@ -3841,7 +3841,7 @@ h5.b-title {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url(/assets/img/authorization-bg.jpg);
+    background-image: url(../../assets/img/authorization-bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat

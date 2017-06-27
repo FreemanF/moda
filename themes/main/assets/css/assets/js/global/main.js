@@ -141,23 +141,23 @@ $('document').ready(function () {
     });
 
     // bind GA events
-    $('.js-ga-onclick').on('click', function () {
-        var e = $(this).data();
-        if (ga) {
-            return ga('send', 'event', e.eventCategory, e.eventAction, e.eventLabel, 1);
-        }
-        console.log('GA lib is not loaded');
-    });
+//    $('.js-ga-onclick').on('click', function () {
+//        var e = $(this).data();
+//        if (ga) {
+//            return ga('send', 'event', e.eventCategory, e.eventAction, e.eventLabel, 1);
+//        }
+//        console.log('GA lib is not loaded');
+//    });
 
     // bind GA events
-    $('.js-link').on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var href = $(this).data('href');
-        if (href) {
-            window.location = href;
-        }
-    });
+//    $('.js-link').on('click', function (e) {
+//        e.preventDefault();
+//        e.stopPropagation();
+//        var href = $(this).data('href');
+//        if (href) {
+//            window.location = href;
+//        }
+//    });
     
     // lazyload images
     $.extend($.lazyLoadXT, {

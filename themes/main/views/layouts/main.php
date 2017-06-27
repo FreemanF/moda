@@ -2229,13 +2229,13 @@
     </div>
 
 <script>
-    window.staticUrl = '<?php echo $this->themeCss; ?>/assets/';
-    window.spriteUrl = '/sprites/defs/svg/sprite.defs.svg?v=4';
+    window.staticUrl = '<?php echo $this->themeCss; ?>assets/';
+    window.spriteUrl = '<?php echo $this->themeCss; ?>assets/sprites/defs/svg/sprite.defs.svg?v=4';
 </script>
 
 
 <script defer src="<?php echo $this->themeCss; ?>assets/build/shared.js"></script>
-<script defer src="<?php echo $this->themeCss; ?>/assets/build/global.js"></script>
+<script defer src="<?php echo $this->themeCss; ?>assets/build/global.js"></script>
 
 
 
