@@ -230,7 +230,7 @@
                     Вход
                 </a>
                 <span class="b-header-links__separator">|</span>
-                <a href="/login?next=/"
+                <a href="/login"
                    class="b-header-links__auth js-ga-onclick"
                    data-event-action="Registration/Login click"
                    data-event-category="Activities"
