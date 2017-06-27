@@ -29,7 +29,7 @@ class SiteController extends MetaController
         $this->render('index');
     }
 	
-	public function actionLogin() {
+	public function actionLogin2() {
 		$serviceName = Yii::app()->request->getQuery('service');
 		if (isset($serviceName)) {
 			/** @var $eauth EAuthServiceBase */
@@ -85,8 +85,13 @@ class SiteController extends MetaController
         $this->layout = '//layouts/empty';
         $this->render('maintanance');
     }
-	
-	public function actionSendt(){
+    
+    public function actionLogin(){
+        $this->layout = '//layouts/login';
+        $this->render('login');
+    }
+
+        public function actionSendt(){
     $Fail = false;
         if(Yii::app()->request->isPostRequest){
 //            if ( ! Users::isLoggedIn()){

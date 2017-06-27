@@ -86,6 +86,7 @@ return array(
                 'clearCachePhoto/*' => 'admin/media/clearCachePhoto',
                 //очистка кэша, у которого истек срок действия params["monthsAgoCachePhoto"]
                 'media/*' => 'admin/media/index',
+		'login' => 'site/login',
                 'works/<sef:[^\/]*>'=>'works/view',
                 'news/<sef:[^\/]*>'=>'news/view',
             ),

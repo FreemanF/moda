@@ -1,4 +1,4 @@
-<?php if($this->beginCache($id, array('duration'=>3600))) { ?>
+<?php // if($this->beginCache($id, array('duration'=>3600))) { ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -2272,4 +2272,4 @@
   </body>
 
 </html>
-<?php $this->endCache(); } ?>
+<?php // $this->endCache(); } ?>
