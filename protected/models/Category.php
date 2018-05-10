@@ -214,7 +214,7 @@ class Category extends CActiveRecord {
                     throw new Exception('Не удалось удалить дочерние рубрики');
 
             switch ($this->c_obj) {
-                case Object::idNews://удаление разрешено
+                case Object::idProduct://удаление разрешено
                     break;
                 default:
                     $obj = Object::getObject($this->c_obj);
@@ -268,5 +268,7 @@ class Category extends CActiveRecord {
         else
             return '#node_'.$this->primaryKey;
     }
+    
+
 }
 

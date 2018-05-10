@@ -15,8 +15,8 @@ $config = array_merge_recursive(
                 ),
             ),        
             'db'=>array(
-                'enableProfiling' => false,
-                'enableParamLogging' => false,
+                'enableProfiling' => true,
+                'enableParamLogging' => true,
             ),
         )
     ));

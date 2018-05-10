@@ -5,7 +5,7 @@ class CategoryController extends CRUDController {
     public  $modelClass       = 'Category';
     public  $layout           = 'adminList';
     public  $layout_leftPanel = 'panelJStree';
-    public  $jstree_default   = '"#node_o1"';
+    public  $jstree_default   = '"#node_o29"';
     public  $layout_index     = 'index';
     public  $treeHrefPrefix   = '/admin/category';
     public  $addAllowActions  = array('list','updatesort');
@@ -65,7 +65,7 @@ class CategoryController extends CRUDController {
                 else // у меню с c_level==0 не может быть дочерних
                     throw new CHttpException(403,'Недопустимая операция.');
             } else // По умолчанию, на верхнем уровне создаём одноранговое меню
-                $this->model->c_level = intval(Object::get($obj, 'have_category'))-1;
+                $this->model->c_level = 90;
         }
     }
     

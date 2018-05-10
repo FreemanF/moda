@@ -1,3 +1,4 @@
+jQuery(function($) {
 $(".b-choose-category__list .b-choose-category__item").click(function() {
     $('.b-choose-category__list .b-choose-category__item').removeClass('b-choose-category__item_state_active');
     $(this).toggleClass('b-choose-category__item_state_active');
@@ -30,11 +31,14 @@ $('.b-choose-color__item').click(function() {
 
         if (nth == i) {
             $(this).toggleClass('c' + nth);
+            $(this).children('input').val(nth);
+            $(this).children('input').prop("checked");
         }
         i++;
         // $('.b-choose-color__item:not(:nth-child('+nth+'))').removeClass('c'+nth);
     }
 });
+
 $('.salex label.b-info-columns__item').click(function() {
     $('.salex label.b-info-columns__item').removeClass('b-info-columns__item_state_active');
     $(this).addClass('b-info-columns__item_state_active');
@@ -67,4 +71,6 @@ $('.product-condition .Select-option').click(function() {
 $('.product-brand .Select-control').click(function() {
     $(this).addClass('is-open').addClass('is-focused');
     $('.product-brand .Select-menu-outer').css('display', 'block');
+});
+
 });

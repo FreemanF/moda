@@ -4,6 +4,7 @@ class ArticleController extends CRUDController
 {
     public    $modelClass     = 'Article';
     protected $_pageTitle     = 'Статьи';
+	public $content_type = 1;
     public    $labelAddButton = 'Добавить статью';
     protected $actionTitles   = array('create'=>'Добавить статью','update'=>'Редактирование статьи');
 

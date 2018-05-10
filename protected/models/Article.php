@@ -20,6 +20,7 @@
  */
 class Article extends CActiveRecord 
 {
+	public $content_type = 1;
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -33,7 +34,7 @@ class Article extends CActiveRecord
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'article';
+        return 'articles';
     }
 
     /**
@@ -46,7 +47,7 @@ class Article extends CActiveRecord
             array('ar_name', 'required'),
             array('ar_meta', 'numerical', 'integerOnly' => true),
             array('ar_name, ar_sef', 'length', 'max' => 255),
-            array('ar_name, dt_start, content_long', 'safe'),
+            array('ar_name, dt_start, content_long, content_type', 'safe'),
             $this->humanDateRule(),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
@@ -129,6 +130,7 @@ class Article extends CActiveRecord
 
         $criteria->compare('arid', $this->arid);
         $criteria->compare('ar_name', $this->ar_name, true);
+		$criteria->compare('content_long', $this->content_long, true);
         $this->humanDateSearch($criteria,$this->dt_start);
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,          

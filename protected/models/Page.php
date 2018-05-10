@@ -5,6 +5,7 @@ class Page extends CActiveRecord{
     public  $maxSort = 0;
     private $_classSort;
     public  $inTrash;
+    public $content_orig = '';
     
     /**
      * Returns the static model of the specified AR class.

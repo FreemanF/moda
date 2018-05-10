@@ -1,0 +1,41 @@
+a:hover, a:focus { 
+    text-decoration: none; /* Убираем подчеркивание 
+                                   при наведении курсора мыши на ссылку */
+}
+
+.b-nav__add-link::hover, .b-nav__add-link::hover {
+    background: #fff none repeat scroll 0 0;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.15s ease 0s;
+}
+
+/* bxslider height on main page */
+.bx-wrapper .bx-viewport {
+    max-height: 325px;
+}
+.b-index-header {
+    padding: 0px;
+}
+
+/* fix some troubles on new product form */
+.b-info-columns__item_state_active {
+    color: #000;
+}
+.b-info-columns__right-part {
+    display: inline-block;
+    width: 49%;
+}
+/* slider arrows not shows in dropped menu */
+.bx-wrapper .bx-controls-direction a {
+    z-index: 4;
+}
+/* width items in catalog */
+.b-catalog_max-columns_4 .b-catalog__item {
+    width: 24.6%;
+}
+/* min height images in catalog */
+.b-catalog__img {
+    min-height: 285px;
+}

@@ -20,8 +20,8 @@
             </ul>
         </li>
         <?php 
-            if ( Yii::app()->user->checkAccess("Administrator") ) { 
-                Yii::app()->getClientScript()->registerPackage('clear');
+//            if ( Yii::app()->user->checkAccess("Administrator") ) { 
+//                Yii::app()->getClientScript()->registerPackage('clear');
         ?>
         <li class="user-sub-menu-container">
             <a href="javascript:void(0)" title="Очистить">
@@ -42,7 +42,7 @@
                 </li>
             </ul>
         </li>
-        <?php } ?>
+        <?php //} ?>
     </ul>
 </div>
 

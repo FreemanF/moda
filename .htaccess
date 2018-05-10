@@ -1,6 +1,6 @@
 Options -Indexes
 
-#IndexIgnore */*
+IndexIgnore */*
 
 RewriteEngine on
 

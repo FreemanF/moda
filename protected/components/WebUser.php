@@ -2,6 +2,7 @@
 
 class WebUser extends CWebUser {
     private $_model = null;
+    private $gender = 'def';
  
     function getRole() {
         
@@ -18,4 +19,13 @@ class WebUser extends CWebUser {
         }
         return $this->_model;
     }
+	
+	function getGender()
+	{
+		if($this->model !== null){
+			return $user->gender;
+		}
+		else
+			return "undefined";
+	}
 }

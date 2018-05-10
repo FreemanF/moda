@@ -25,6 +25,8 @@ class User extends CActiveRecord
     private $_userisadmin;
     public  $nickname;
     public  $user_sef;
+	public $facebook_id;
+	public $gender;
 
     /**
      * Returns the static model of the specified AR class.
@@ -72,7 +74,8 @@ class User extends CActiveRecord
 
             array('username, password, email', 'required', 'on'=>'edit'),
             array('fullname,status,userisadmin,u_dosye', 'safe', 'on'=>'edit'),
-            array('uid,username,fullname,email', 'safe', 'on'=>'search'),
+            array('uid,username,fullname,email,facebook_id', 'safe', 'on'=>'search'),
+			array('facebook_id','safe'),
             array("nickname", "unsafe"),
         );
     }
@@ -175,6 +178,7 @@ class User extends CActiveRecord
             $criteria->compare('updatetime',$this->updatetime,true);
             $criteria->compare('fullname',$this->fullname,true);
             $criteria->compare('status',$this->status,true);
+			$criteria->compare('facebook_id',$this->facebook_id,true);
 
             return new CActiveDataProvider($this, array(
                     'criteria'=>$criteria,

@@ -6,7 +6,7 @@
 class ModuleController extends Controller
 {
     static private $_modules;
-    protected $_pageTitle = 'KPD панель администратора';
+    protected $_pageTitle = 'Панель администратора';
     protected $_actionTitle;
     protected $actionTitles = array();
         //'index' =>'Список записей',

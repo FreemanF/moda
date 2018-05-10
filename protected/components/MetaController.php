@@ -410,7 +410,7 @@ echo '<p><a class="button transparent" href="/works/'.$pj->pr_sef.'">подро�
 		}
 	}
 	
-	public function showPjs($prid){
+	public function showPjs_old($prid){
 		$pjs = Plist::model()->with('media')->FindAllByAttributes(array('pl_project_id'=>$prid));
 		$i = 0;
 		$count = count($pjs);
@@ -814,5 +814,196 @@ echo '<p><a class="button transparent" href="/works/'.$pj->pr_sef.'">подро�
 			
 		}
 	}
+	
+	public function showTopCategoriesMain(){
+		$categories = Category::model()->with('children','parent')->findAll(array('condition'=>'t.c_pid IS NULL', 'order'=>'t.c_name ASC'));
+		//print_r($categories,true);
+		
+		foreach ($categories as $cat){
+			
+			echo '<div class="b-index-categories__block">
+                                <div class="b-block">
+                                    <svg class="b-index-categories__icon">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#static--svg--sweater"/>
+                                    </svg>
+                                    <h3 class="b-index-categories__title">'.$cat->c_name.'</h3>
+                                </div>';
+                                //$this->getMainChildsC($cat->cid);
+								//echo print_r($child_cat,true);
+								
+					foreach ($cat->children as $child_cat){
+						//get products
+						$product = Product::model()->find('t.pd_category='.$child_cat->cid);
+						if ($product)
+						{
+						//
+						echo '<ul class="b-index-categories__list">
+							<li class="b-index-categories__list_item">
+                            <a href="category/'.$child_cat->parent->c_sef.'/'.$child_cat->c_sef.'" class="js-ga-onclick" data-event-category="Catalog" data-event-action="Open from home" data-event-label="category/'.$child_cat->c_sef.'">
+                                '.$child_cat->c_name.'
+                            </a>
+							</li>
+						</ul>';
+					}
+					}
+                echo '</div>';
+		}
+	}
+	
+	public function getMainChildsC($cid){
+		$cats = Category::model()->FindAllByAttributes(array('c_pid'=>$cid));
+		
+		foreach ($cats as $cat){
+			echo '<ul class="b-index-categories__list">
+                        <li class="b-index-categories__list_item">
+                            <a href="/'.$cat->c_sef.'" class="js-ga-onclick" data-event-category="Catalog" data-event-action="Open from home" data-event-label="/'.$cat->c_sef.'">
+                                '.$cat->c_name.'
+                            </a>
+                        </li>
+                </ul>';
+		}
+	}
+	
+	public function mainBrands(){
+		$brand = Client::model()->with('media')->findAll(array('condition'=>'t.cl_media_id IS NOT NULL','limit'=>18));
+		foreach ($brand as $br){
+			echo '<li class="b-brands__item">
+                            <a href="brands/'.$br->cl_sef.'" class="b-brands__link">';
+            //                    <img class="b-brands__img" src="uploads/brands/brand_0028_only.png" alt="ONLY"/>
+$media = $br->media;
+		if ($media){
+                $image = CHtml::image($media->getMediaUrl()
+                    ,$media->i_alt
+                    ,array('title'=>$media->i_name,
+                           'class'=>'b-brands__img',
+							'style' => 'min-height:129px;min-width:180px;max-height: 129px;',
 
+//                           'position'=>'absolute',
+//                           'top' => '0px',
+//                           'left' => '-498px',
+//                           'slidedirection' => 'fade',
+//                           'slideoutdirection' => 'fade',
+//                           'durationin' => 1500,
+//                           'durationout' => 1500,
+//                           'easingin' => 'easeInBack',
+//                           'easingout' => 'easeInOutQuint',
+//                           'delayin' => 3000,
+//                           'delayout' => 0,
+//                           'showuntil' => 0,
+        //                   'width'=>'150',
+        //                   'height'=>'100')220x151
+                ));
+            } else{
+                $image = '';
+            }
+			echo $image;
+            echo '</a>
+                        </li>';
+		}
+	}
+	
+	//get vip records on main page
+	public function mainVips(){
+		$vips = Product::model()->with('media','brand','category')->vip()->findAll(array('limit'=>15));
+		foreach ($vips as $v){
+			echo '<li class="b-catalog__item" id="b-catalog__item-5609173" >
+            <a class="b-catalog__link js-ga-onclick2 "
+       href="product/'.$v->category->parent->c_sef.'/'.$v->pd_sef.'"
+       data-event-action="Open from VIP"
+       data-event-category="Open"
+       data-event-label=""
+       data-id="5609173"
+       title="'.$v->pd_name.'">';
+	   $media = $v->media;
+		if ($media){
+                $image = CHtml::image($media->getMediaUrl()
+                    ,$media->i_alt
+                    ,array('title'=>$media->i_name,
+                           'class'=>'b-catalog__img js-lazy-img',
+							'style' => '',
+                ));
+            } else{
+                $image = '';
+            }
+	   echo $image;
+	   echo '<noscript>';
+       echo $image;
+       echo '</noscript>
+
+        
+
+        <span class="b-catalog__details">'.
+            $v->content_long
+            .'<span class="b-catalog__details_city"></span>
+        </span>
+
+        <span class="b-catalog__size">
+                <span class="b-size">
+                    <span class="b-size__item">'.$v->size->name.'</span>
+                </span>
+            </span>
+
+        <span class="b-catalog__info b-catalog__info_promoted">
+            <span class="b-catalog__name">'.$v->brand->cl_name.'</span>
+
+            
+
+            <span class="b-catalog__price" style="color: #bfff00;">
+                    '.$v->pd_price.'
+                    <span class="b-catalog__currency">грн</span>
+                </span>
+
+        </span>
+    </a>
+        </li>';
+		}
+	}
+        
+        
+        ///////get colors list
+        public function getColors(){
+            return $data = [
+               0 => array('cpid'=>0, 'cp_name'=> 'Белый', 'cp_rgb' => 'rgb(255, 255, 255)'),
+               1 => array('cpid'=>1, 'cp_name'=> 'Серебристый', 'cp_rgb' => 'rgb(237, 238, 240)'),
+               2 => array('cpid'=>2, 'cp_name'=> 'Бежевый', 'cp_rgb' => 'rgb(246, 230, 209)'),
+               3 => array('cpid'=>3, 'cp_name'=> 'Серый', 'cp_rgb' => 'rgb(167, 167, 167)'),
+               4 => array('cpid'=>4, 'cp_name'=> 'Жёлтый', 'cp_rgb' => 'rgb(255, 246, 51)'),
+               5 => array('cpid'=>5, 'cp_name'=> 'Золотистый', 'cp_rgb' => 'rgb(255, 225, 51)'),
+               6 => array('cpid'=>6, 'cp_name'=> 'Оранжевый', 'cp_rgb' => 'rgb(255, 184, 51)'),
+               7 => array('cpid'=>7, 'cp_name'=> 'Розовый', 'cp_rgb' => 'rgb(255, 51, 153)'),
+               8 => array('cpid'=>8, 'cp_name'=> 'Красный', 'cp_rgb' => 'rgb(217, 91, 51)'),
+               9 => array('cpid'=>9, 'cp_name'=> 'Бирюзовый', 'cp_rgb' => 'rgb(197, 229, 237)'),
+               10 => array('cpid'=>10, 'cp_name'=> 'Синий', 'cp_rgb' => 'rgb(51, 149, 210)'),
+               11 => array('cpid'=>11, 'cp_name'=> 'Хаки', 'cp_rgb' => 'rgb(158, 155, 107)'),
+               12 => array('cpid'=>12, 'cp_name'=> 'Зелёный', 'cp_rgb' => 'rgb(89, 175, 95)'),
+               13 => array('cpid'=>13, 'cp_name'=> 'Фиолетовый', 'cp_rgb' => 'rgb(154, 51, 155)'),
+               14 => array('cpid'=>14, 'cp_name'=> 'Коричневый', 'cp_rgb' => 'rgb(133, 93, 51)'),
+               15 => array('cpid'=>15, 'cp_name'=> 'Чёрный', 'cp_rgb' => 'rgb(0, 0, 0)'),
+               16 => array('cpid'=>16, 'cp_name'=> 'Разноцветный', 'cp_rgb' => 'linear-gradient(rgb(255, 237, 36), rgb(66, 255, 110), rgb(121, 149, 255));'),
+            ];
+        }
+        
+        
+        ///////get colors list
+        public function getStates(){
+            return $data = [
+               0 => array('stid'=>0, 'st_name'=> 'Новое'),
+               1 => array('stid'=>1, 'st_name'=> 'Идеальное'),
+               2 => array('stid'=>2, 'st_name'=> 'Хорошее'),
+            ];
+        }
+
+        
+        //set messages is readed in dialogs
+        public function setReadedMessages($user_id,$dialog_id)
+        {
+            $message_list = Messages::model()->findAllByAttributes(array('ms_dlg'=>$dialog_id,'ms_recipient'=>$user_id));
+            if (!empty($message_list))
+            {
+                foreach ($message_list as $messages => $message) {
+                    $message->ms_readed = 1;
+                    $message->save();
+                }
+            }
+        }
 }

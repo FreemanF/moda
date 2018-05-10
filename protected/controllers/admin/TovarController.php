@@ -13,7 +13,7 @@ class TovarController extends CRUDController
     }
     
     public function withModel() {
-        return array("meta");
+        return array("media");
     }
     
     protected function beforeValidation() {

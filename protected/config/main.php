@@ -56,9 +56,15 @@ return array(
             'allowAutoLogin'=>true,
             'loginUrl' => array('admin/user/login'),
         ),
+        'users' => array(
+	    'class'=>'fbWebUser',
+            'allowAutoLogin'=>true,
+            'loginUrl' => array('users/register'),
+        ),
 	'debug' => array(
             'class' => 'ext.yii2-debug.Yii2Debug',
             'allowedIPs' => $kpdIPs,
+            'highlightCode' => true,
         ),
         'email'=>array(
             'class'=>'application.extensions.email.Email',
@@ -68,6 +74,9 @@ return array(
         'errorHandler'=>array(
             //'errorAction'=>'site/error',
             'errorAction'=>'pages',
+        ),
+	'request'=>array(
+            'enableCookieValidation'=>true,
         ),
 //      Для мультиязычности
 //        'request'=>array(
@@ -87,12 +96,21 @@ return array(
                 //очистка кэша, у которого истек срок действия params["monthsAgoCachePhoto"]
                 'media/*' => 'admin/media/index',
 		'login' => 'site/login',
-                'works/<sef:[^\/]*>'=>'works/view',
-                'news/<sef:[^\/]*>'=>'news/view',
+		'new' => 'site/new',
+                'category/<sef:[^\/]*>'=>'category/view',
+                'category/<sub:[^\/]*>/<sef:[^\/]*>'=>'category/viewTwo',
+                'page/<sef:[^\/]*>'=>'site/page',
+                'product/<cat:[^\/]*>/<sub:[^\/]*>/<sef:[^\/]*>' => 'site/detail',
+            //    'news/<sef:[^\/]*>'=>'news/view',
+		'brands/<sef:[^\/]*>'=>'brands/view',
+		'profile/<sef:[^\/]*>'=>'profile/view',
+                'msg/ajaxcount'=>'msg/ajaxcount',
+                'msg/<id:[^\/]*>'=>'msg/view',
+                'my/editproduct/<sef:\d+>'=>'my/editproduct',
             ),
-            //'appendParams'=>false,
+            'appendParams'=>false,
             'showScriptName' => false,
-            'caseSensitive' => true,
+            'caseSensitive' => false,
         ),
         //'clientScript'=>array(
             //'scriptMap'=>array(
@@ -110,7 +128,7 @@ return array(
             'routes'=>array(
                 array(
                     'class'=>'CFileLogRoute',
-                    'levels'=>'translation, trace, error, warning',
+                    'levels'=>'error',
                     'logFile'=>'translations.log',
                 ),
             ),

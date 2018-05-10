@@ -320,7 +320,7 @@ class Media extends CActiveRecord{
                     ));
                 }
                 return $model;
-            }   
+            }
         }
         Yii::log('Размер превышает '.self::$maxFileSize.'Mb');
         return null;

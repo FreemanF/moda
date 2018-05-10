@@ -8,9 +8,11 @@ class ClientController extends CRUDController
     public $infoAlertOnDefaultPanel = 'Данный модуль позволит добавить\удалить изображения Наши клиенты';
     public $date_column     = false; // В модели нет даты 
     public $is_published    = true;
+	protected $actionTitles   = array('create'=>'Добавить бренд','update'=>'Редактирование бренда');
     //public $layout_index    = '//layouts/stdindexSort';
     
     public function setDefaultAttributes() {
+		parent::setDefaultAttributes();
         $this->model->is_published  = 0;
         //$maxSort = Slider::model()->find(array(
         //    "select"    => "MAX(sl_sort) max"
@@ -40,4 +42,9 @@ class ClientController extends CRUDController
         return $columns;
     }
 	*/
+	
+	protected function beforeValidation() {
+        if ( !$this->model->cl_sef )
+            $this->model->cl_sef = TranslitFilter::translitUrl($this->model->cl_name);
+    }
 }

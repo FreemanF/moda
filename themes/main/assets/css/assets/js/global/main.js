@@ -228,6 +228,9 @@ $('document').ready(function () {
 
     // dropdown catalog menu
     $('.js-catalog-menu').on('click', function(e) {
+        $('b-nav__item_state_opened').each(function() {
+            $(this).removeClass('b-header-links__profile_state_opened');
+        });
         $(this).toggleClass('b-nav__item_state_opened');
         $('.js-profile-menu').removeClass('b-header-links__profile_state_opened');
     });

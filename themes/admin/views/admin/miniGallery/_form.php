@@ -3,9 +3,6 @@
     $cs->registerPackage('photo_sort');
 ?>
 <script>
-    var aspectRatio = 200/145;
-    var minSizeX    = 200;
-    var minSizeY    = 145;
     var oID = '<?php echo $this->model->primaryKey; ?>';
     var crudalias   = '<?php echo $this->crudalias; ?>';
 </script>
@@ -34,17 +31,16 @@
             echo $form->checkBoxBS('=is_published');
             
             echo $form->mediaFieldBS('i_original');
-//            echo $form->mediaFieldBS('watermark');
             echo $form->mediaFieldBS('i_name');
             echo $form->mediaFieldBS('i_alt');
             
             foreach ($form->media as $image) 
                 if ($image->i_original)
-                    echo $form->mediaBS($image,array('del',/*'watermark',*/'i_name','i_alt'));
+                    echo $form->mediaBS($image,array('del','i_name','i_alt'));
         ?>
     </div>
     <?php
-        echo $form->buttonRow(false);
+        echo $form->buttonSave();
         
         $this->endWidget();
     ?>

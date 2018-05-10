@@ -18,10 +18,10 @@ class Client extends CActiveRecord
 {
     public $is_published = 1;
     public $max;
-	public $content_long, $content_orig = '';
-	public $content_type = 0;
+    public $content_long, $content_orig = '';
+    public $content_type = 0;
     private $_classSort;
-	public $dt_start = '';
+    public $dt_start = '';
 
     
 	/**
@@ -51,12 +51,12 @@ class Client extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('cl_name', 'required'),
-			array('is_published', 'numerical', 'integerOnly'=>true),
-			array('cl_name', 'length', 'max'=>255),
-			array('content_long', 'safe'),
+			array('is_published, cl_category', 'numerical', 'integerOnly'=>true),
+			array('cl_name, cl_sef', 'length', 'max'=>255),
+			array('content_long, cl_sef', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('clid, cl_name, content_long, is_published, cl_media_id', 'safe', 'on'=>'search'),
+			array('clid, cl_name, cl_sef, cl_category, content_long, is_published, cl_media_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,6 +69,7 @@ class Client extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'media' => array(self::BELONGS_TO, 'Media', 'cl_media_id'),
+					'category'   => array(self::BELONGS_TO, 'Category', 'cl_category'), //, 'on'=>'c_obj='.Object::idNews),
 		);
 	}
         
@@ -81,6 +82,7 @@ class Client extends CActiveRecord
                 'withSort'=>false),
 //                'DateBehavior',
 //                'LogBehavior',
+				'SefBehavior',
                 'PrefixedModel' => array('class'=>'PrefixedModel'),
             );
         }
@@ -90,7 +92,30 @@ class Client extends CActiveRecord
             // заглушка для индексной страницы
             return $this;
         }
+		
+    public function scopes() {
+        return array(
+            'sef'       => array(),
+            'category'  => array(),
+        );
+    }		
 
+    public function sef($sef) {
+        $this->getDbCriteria()->mergeWith(array(
+            'condition' => 'cl_sef=:sef',
+            'params' => array('sef' => $sef),
+        ));
+        return $this;
+    }
+    
+    public function category($cid) {
+        $this->getDbCriteria()->mergeWith(array(
+            'condition' => 'cl_category=:cid',
+            'params' => array('cid' => $cid),
+        ));
+        return $this;
+    }
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -99,9 +124,10 @@ class Client extends CActiveRecord
 		return array(
 			'clid' => 'id',
 			'cl_name' => 'Заголовок',
-			//'pr_link' => 'Ссылка',
+			'cl_sef' => 'Ссылка',
+			
 			//'dt_start' => 'Дата',
-			//'content_orig' => 'Оригинал',
+			'cl_category' => 'Категория',
 			//'content_type' => 'Редактор',
 			//'content_long' => 'HTML текст',
 			'is_published' => 'Опубликовано',
@@ -122,13 +148,15 @@ class Client extends CActiveRecord
 
 		$criteria->compare('clid',$this->clid);
 		$criteria->compare('cl_name',$this->cl_name,true);
-		//$criteria->compare('pr_link',$this->pr_link,true);
+		$criteria->compare('cl_sef',$this->cl_sef,true);
 		//$criteria->compare('dt_start',$this->dt_start,true);
 		//$criteria->compare('content_orig',$this->content_orig,true);
 		//$criteria->compare('content_type',$this->content_type);
 		//$criteria->compare('content_long',$this->content_long,true);
 		$criteria->compare('is_published',$this->is_published);
 		$criteria->compare('cl_media_id',$this->cl_media_id);
+		if ($this->cl_category)
+                    $criteria->compare('cl_category',$this->cl_category);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -152,4 +180,11 @@ class Client extends CActiveRecord
             "order" => "clid ASC"
         );
     }
+	
+    public function listNames() {
+        $cl_all = Client::model()->findAll();
+        return CHtml::listData($cl_all, 'clid', 'cl_name');
+        //Yii::log('LIST: '.var_export($list,true));
+    }
+	
 }

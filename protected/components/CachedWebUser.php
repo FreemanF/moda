@@ -5,6 +5,7 @@ class CachedWebUser extends CWebUser {
     private $_isAdmin;
     private $_isBlogEditor;
     private $_isDBManager;
+	public $gender;
     
     public static function ip2long($str_ip) {
         return sprintf("%u", ip2long(trim($str_ip)));

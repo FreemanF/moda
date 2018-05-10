@@ -1,6 +1,8 @@
 /nbproject
 /server.log
 /media/
+/storage
+/sprites
 /media.tar
 /config-*
 /protected/config/goodini*
@@ -8,4 +10,5 @@
 /protected/config/home*
 /protected/config/local*
 /protected/config/site*
+/protected/config/*
 \.env

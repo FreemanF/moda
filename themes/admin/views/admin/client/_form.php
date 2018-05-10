@@ -20,8 +20,11 @@
             echo $form->textFieldBS('name');
             
             echo $form->checkBoxBS('=is_published');
-            
-            //echo $form->textFieldBS('link');
+//            echo $form->dropDownListBS(
+//                'category',
+//                CHtml::listData(Category::model()->getHierarchy(Object::idBrand),'cid','c_name')
+//            );
+            echo $form->textFieldBS('sef');
             
             echo $form->mediaFieldBS('del');
             echo $form->mediaFieldBS('i_original');

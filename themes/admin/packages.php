@@ -8,6 +8,11 @@ $themeBase = 'theme_'.$themeName;
 $themeAssets = 'webroot.themes.'.$themeName.'.assets';
 $themeUpdate = $themeBase.'_update';
 return array(
+	'jquery' => array(
+		'basePath' => 'https://ajax.googleapis.com/ajax/libs/jquery/',
+		'baseUrl' => 'https://ajax.googleapis.com/ajax/libs/jquery/',
+		'js'=>array('1.8.1/jquery.min.js'),
+	),
     $themeBase => array(
         'basePath' => $themeAssets,
         'css' => array(
